@@ -16,6 +16,8 @@ return new class extends Migration
             $table->id();
             $table->uuid('tenant_id');
             $table->foreignUuid('manager_id')->constrained('users', 'user_id');
+            $table->string('school_name')->unique();
+            $table->string('location');
             $table->string('domain');
             $table->string('subdomain');
             $table->timestamps();
