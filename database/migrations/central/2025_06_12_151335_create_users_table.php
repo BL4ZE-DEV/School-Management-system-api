@@ -1,4 +1,5 @@
 <?php
+namespace Database\migrations\central ;
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -13,11 +14,13 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->uuid('user_id')->unique();
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
+            $table->foreignId('role_id')->constrained('roles', 'id');
+            $table->rememberToken()->nullable();
             $table->timestamps();
         });
 
