@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('attendances', function (Blueprint $table) {
             $table->id();
             $table->foreignId('student_id')->constrained('students', 'id');
-            $table->foreignId('school_classes')->constrained('classes', 'id');
+            $table->foreignId('school_class_id')->constrained('School_classes', 'id');
             $table->date('date');
             $table->enum('status', ['Presnet', 'Absent']);
             $table->foreignId('marked_by')->constrained('staff', 'id');

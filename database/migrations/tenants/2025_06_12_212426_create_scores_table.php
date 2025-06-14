@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('exam_id')->constrained('exams', 'id');
             $table->foreignId('student_id')->constrained('students', 'id');
             $table->foreignId('subject_id')->constrained('subjects', 'id');
-            $table->foreignId('class_id')->constrained('school_classes', 'id');
+            $table->foreignId('school_class_id')->constrained('school_classes', 'id');
             $table->decimal('score', 5, 2);
             $table->timestamps();
         });
