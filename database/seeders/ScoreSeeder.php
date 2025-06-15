@@ -2,16 +2,19 @@
 
 namespace Database\Seeders;
 
+use App\Models\tenant\Score;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ExamsSeeder extends Seeder
+class ScoreSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        //
+       Score::factory()
+                  ->count(10)
+                  ->create();
     }
 }

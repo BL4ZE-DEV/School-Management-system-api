@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('student_id')->constrained('students', 'id');
             $table->foreignId('school_class_id')->constrained('School_classes', 'id');
             $table->date('date');
-            $table->enum('status', ['Presnet', 'Absent']);
+            $table->enum('status', ['Present', 'Absent']);
             $table->foreignId('marked_by')->constrained('staff', 'id');
             $table->timestamps();
         });

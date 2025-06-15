@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories;
+namespace Database\Factories\tenant;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -17,7 +17,9 @@ class SubjectFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'subject_code'=> $this->faker->unique()->bothify('SUB-####'),
+            'name'=> $this->faker->word,
+            'type' => $this->faker->randomElement(['Core', 'Elective'])
         ];
     }
 }

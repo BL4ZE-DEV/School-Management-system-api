@@ -2,11 +2,13 @@
 
 namespace App\Models\tenant;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class ClassSubjectTeacher extends Model
 {
+    use HasFactory;
 
     protected $connection = 'tenants';
     protected $table = 'class_subject_teacher';
