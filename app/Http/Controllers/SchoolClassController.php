@@ -35,7 +35,7 @@ class SchoolClassController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(SchoolClass $schoolClass)
+    public function show(SchoolClas $schoolClass)
     {
         //
     }

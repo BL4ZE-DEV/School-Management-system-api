@@ -129,7 +129,7 @@ return [
             'driver' => 'mysql',
             'host' => env('TENANTS_DB_HOST', 'localhost'),
             'port' => env('TENANTS_DB_PORT', '3306'),
-            'database' => '',
+            'database' => 'tenant_db',
             'username' => env('TENANTS_DB_USERNAME', 'root'),
             'password' => env('TENANTS_DB_PASSWORD', ''),
             'charset' => 'utf8mb4',

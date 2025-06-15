@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('email')->unique();
             $table->enum('gender',['Male', 'Female'] );
-            $table->enum('role', ['Teacher', 'Admin', 'Non_Acadmic']);
+            $table->enum('role', ['Teacher', 'Admin', 'Non_Academic']);
             $table->timestamps();
         });
     }

@@ -2,18 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\tenant\Subject;
+use App\Models\tenant\Exam;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class SubjectSeeder extends Seeder
+class ExamSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Subject::factory()
+        Exam::factory()
                   ->count(10)
                   ->create();
     }
