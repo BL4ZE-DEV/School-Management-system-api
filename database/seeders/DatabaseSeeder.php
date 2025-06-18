@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Permission;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -20,13 +21,17 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        $this->call(StaffSeeder::class);
-        $this->call(SchoolClassSeeder::class);
-        $this->call(StudentSeeder::class);
-        $this->call(SubjectSeeder::class);
-        $this->call(AttendanceSeeder::class);
-        $this->call(ExamSeeder::class); 
-        $this->call(ScoreSeeder::class);
-        $this->call(ClassSubjectTeacherSeeder::class);       
+        // $this->call(StaffSeeder::class);
+        // $this->call(SchoolClassSeeder::class);
+        // $this->call(StudentSeeder::class);
+        // $this->call(SubjectSeeder::class);
+        // $this->call(AttendanceSeeder::class);
+        // $this->call(ExamSeeder::class); 
+        // $this->call(ScoreSeeder::class);
+        // $this->call(ClassSubjectTeacherSeeder::class);   
+        
+        $this->call(RoleSeeder::class);
+        $this->call(PermissionsSeeder::class);
+        $this->call(RolePermissionSeeder::class);
     }
 }
