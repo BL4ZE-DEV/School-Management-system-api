@@ -14,16 +14,15 @@ class PermissionsSeeder extends Seeder
     public function run(): void
     {
         $permissions = [
-            ['name' => 'manage_users'],
-            ['name' => 'view_reports'],
-            ['name' => 'manage_estates'],
-            ['name' => 'create_tenant'],
-            ['name' => 'manage_visitors'],
-
+            ["name" => "manage_users"],
+            ["name" => 'view_reports'],
+            ["name" => 'manage_estates'],
+            ["name" => 'create_tenant'],
+            ["name" => 'manage_visitors'],
         ];
 
         foreach ($permissions as $permission){
-            Permission::create([$permission]);
+            Permission::create($permission);
         }
     }
 }

@@ -11,6 +11,15 @@ class Tenant extends Model
     /** @use HasFactory<\Database\Factories\TenantsFactory> */
     use HasFactory;
 
+    protected $fillable =[
+        'school_name',
+        'tenant_id',
+        'location',
+        'database_name',
+        'manager_id',
+        'subdomain'
+    ];
+
     protected $connection = 'central';
     
     public function User(): BelongsTo
