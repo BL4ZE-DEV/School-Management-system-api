@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -15,15 +16,7 @@ Route::get("/", function(){
 });
 
 
-Route::post('/create-user', [UserController::class, 'store']);
+Route::post('/create-user', [AuthController::class, 'store']);
 
 
-Route::get('/test2', function(){
-    return "yhh yhhyh hy h";
-});
-
-Route::post('/login',  [UserController::class, 'login']);
-
-Route::middleware('tenant')->get('/test', function () {
-    return "something"; // or just a string
-});
+Route::post('/login',  [AuthController::class, 'login']);
