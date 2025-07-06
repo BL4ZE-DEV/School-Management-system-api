@@ -13,7 +13,9 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->append(TenantResolver::class);
+        $middleware->alias([
+            'tenant' => TenantResolver::class
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

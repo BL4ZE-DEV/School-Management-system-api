@@ -16,6 +16,14 @@ Route::get("/", function(){
 
 
 Route::post('/create-user', [UserController::class, 'store']);
-Route::middleware('TenantResolver')->get('/test', function () {
-    return \App\Models\Tenant\Student::count(); // or just a string
+
+
+Route::get('/test2', function(){
+    return "yhh yhhyh hy h";
+});
+
+Route::post('/login',  [UserController::class, 'login']);
+
+Route::middleware('tenant')->get('/test', function () {
+    return "something"; // or just a string
 });

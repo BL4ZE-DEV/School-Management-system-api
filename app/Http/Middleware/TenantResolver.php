@@ -17,13 +17,25 @@ class TenantResolver
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // $host = explode('.',$request->getHost());
+        $host = explode('.',$request->getHost());
+        $mainDomain = "school-management-system-api.test";
 
-        // $tenant = Tenant::where('subdomain', $host)->firstOrfail();
+        if($host === $mainDomain){
+           return $next($request); 
+        }
+
+        $subdomain = str_replace(".{$mainDomain}", '', $host);
+
+        if (empty($subdomain) || $subdomain === $host) {
+            return $next($request);
+        }
+
+        $tenant = Tenant::where('subdomain', $host)->firstOrfail();
         
-        // config(['database.connections.tenants.database' => $tenant->database_name]);
-        // DB::purge('tenats');
-        // DB::reconnect('tenants');
+        config(['database.connections.tenants.database' => $tenant->database_name]);
+        DB::purge('tenats');
+        DB::reconnect('tenants');
+
         return $next($request);
     }
 }
