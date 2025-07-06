@@ -22,9 +22,11 @@ class User extends Authenticatable
     protected $connection = 'central';
 
     protected $fillable = [
+        'user_id',
         'name',
         'email',
         'password',
+        'role_id'
     ];
 
     /**
@@ -33,6 +35,7 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $hidden = [
+        'id',
         'password',
         'remember_token',
     ];
